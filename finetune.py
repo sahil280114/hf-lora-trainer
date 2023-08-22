@@ -144,7 +144,7 @@ def train(
     model = LlamaForCausalLM.from_pretrained(
         base_model,
         load_in_8bit=True,
-        torch_dtype=torch.float16,
+        torch_dtype=torch.bfloat16,
         device_map=device_map)
 
     tokenizer = LlamaTokenizer.from_pretrained(base_model)
